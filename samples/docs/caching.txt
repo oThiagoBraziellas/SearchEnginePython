@@ -1,0 +1,7 @@
+Caching strategies for web services
+
+A cache stores the result of an expensive operation so that the next request can be served faster.
+The most common eviction policy is least recently used: when the cache is full, the entry that has
+not been read for the longest time is removed. Other policies include least frequently used and
+random eviction. Caches must also decide how long an entry stays valid, which is usually done with a
+time to live. Stale data is the price of speed, so every cache needs an invalidation story.

@@ -1,0 +1,7 @@
+Replication and consistency
+
+Replication keeps copies of data on several machines to survive failures and to serve more reads.
+With leader based replication all writes go through one node and are streamed to followers. Reading
+from a follower can return stale data. Consistent hashing is often combined with replication so that
+each key is stored on the next few nodes of the ring. Quorum reads and writes trade latency for
+stronger guarantees.

@@ -1,0 +1,7 @@
+Consistent hashing explained
+
+Consistent hashing places both servers and keys on a ring. A key belongs to the first server found
+clockwise from its position. When a server joins or leaves the ring, only the keys next to it move,
+instead of nearly all keys as happens with modulo hashing. Virtual nodes give each physical server
+many positions on the ring, which evens out the load. Distributed caches and databases use this idea
+to scale horizontally without reshuffling their data.

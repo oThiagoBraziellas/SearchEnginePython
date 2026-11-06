@@ -1,0 +1,6 @@
+How full text search works
+
+A search engine builds an inverted index that maps every term to the documents containing it.
+At query time it looks up the terms, combines the lists and ranks the results. BM25 scores a document
+by the frequency of each query term, adjusted for document length and for how rare the term is across
+the collection. Phrase queries need the position of every term, so the index stores positions as well.

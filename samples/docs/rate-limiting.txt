@@ -1,0 +1,6 @@
+Rate limiting for public APIs
+
+An API without limits can be overwhelmed by a single noisy client. The token bucket algorithm lets
+clients burst up to a fixed capacity and then refills tokens at a steady rate. A sliding window log
+counts requests in the last interval exactly, at the price of storing every timestamp. Responses that
+reject a request should include a retry after hint so that well behaved clients can back off.

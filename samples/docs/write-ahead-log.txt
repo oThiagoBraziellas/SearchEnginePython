@@ -1,0 +1,7 @@
+Write ahead logging and crash recovery
+
+Databases make changes durable by appending them to a write ahead log before touching the main data
+structures. After a crash the log is replayed to rebuild the state. A record that was only partly
+written when the power failed is detected with a checksum and discarded. Periodic compaction rewrites
+the log so that it does not grow without limit. Calling fsync after each append is what guarantees
+that an acknowledged write survives a power loss.
